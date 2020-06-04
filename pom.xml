@@ -23,6 +23,7 @@
                         <allure.results.directory>${project.build.directory}/allure-results</allure.results.directory>
                     </systemPropertyVariables>
                     <testFailureIgnore>true</testFailureIgnore>
+                    <failIfNoTests>false</failIfNoTests>
                     <includes>*Test*.java</includes>
                     <argLine>
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/1.9.5/aspectjweaver-1.9.5.jar"
