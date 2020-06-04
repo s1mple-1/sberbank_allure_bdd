@@ -31,7 +31,6 @@ public class MortgagePageSteps {
         mortgagePage.fillFields(name, value);
     }
 
-
     @Step("Выбираем необходимые опции")
     public MortgagePageSteps chooseSwitches(List<Integer> switches) {
         switches.forEach(this::chooseHelper);

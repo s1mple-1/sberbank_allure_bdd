@@ -32,10 +32,8 @@ public class MortgagePage extends BasePage {
     @FindBy(xpath = "//input[@id='creditTerm']")
     private WebElement creditTerm;//срок кредита
 
-
     @FindBy(xpath = "//div[text()='Есть возможность подтвердить доход справкой']")
     private WebElement checkIncomeElement;
-
 
     public MortgagePage() {
         PageFactory.initElements(BaseSteps.getWebDriver(), this);
@@ -61,9 +59,10 @@ public class MortgagePage extends BasePage {
         }
     }
 
-    public void fillField(WebElement fieldElement, String value) {
+    private void fillField(WebElement fieldElement, String value) {
         fieldElement.clear();
         waitRefreshingValues();
+        fieldElement.clear();
         fieldElement.sendKeys(value);
         waitRefreshingValues();
     }

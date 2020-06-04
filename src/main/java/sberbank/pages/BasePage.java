@@ -11,7 +11,6 @@ public abstract class BasePage {
         BaseSteps.webDriverWait.until(ExpectedConditions.elementToBeClickable(webElement)).click();
     }
 
-
     public WebElement findElement(String xpath) {
         return BaseSteps.getWebDriver().findElement(By.xpath(xpath));
     }
