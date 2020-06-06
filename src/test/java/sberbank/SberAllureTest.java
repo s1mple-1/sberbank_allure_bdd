@@ -18,7 +18,7 @@ class SberAllureTest extends BaseTest {
         BaseSteps.getSite(url);
 
         mainPageSteps.selectMortgageMenuBar().selectMortgageOnReadyHouses();
-        mainPageSteps.closeCookie();
+
         mortgagePageSteps.connectFrameAndWaitLoading()
                 .fillFields(
                         new LinkedHashMap<>() {{
