@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import sberbank.steps.BaseSteps;
+import sberbank.utils.AllureUtils;
 
 public abstract class BasePage {
 
@@ -14,8 +15,9 @@ public abstract class BasePage {
         try {
             BaseSteps.webDriverWait.until(ExpectedConditions.elementToBeClickable(webElement)).click();
         } catch (ElementClickInterceptedException e) {
+            AllureUtils.takeScreenshot();
             checkCookie();
-            clickToElement(webElement);
+            webElement.click();
         }
     }
 
