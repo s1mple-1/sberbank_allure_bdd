@@ -1,6 +1,7 @@
 package sberbank.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -10,7 +11,12 @@ import sberbank.steps.BaseSteps;
 abstract class BasePage {
 
     void clickToElement(WebElement webElement) {
+        try {
             BaseSteps.webDriverWait.until(ExpectedConditions.elementToBeClickable(webElement)).click();
+        } catch (ElementClickInterceptedException e) {
+            e.printStackTrace();
+            webElement.click();
+        }
     }
 
     WebElement findElement(String xpath) {
@@ -40,7 +46,7 @@ abstract class BasePage {
 
     void checkCookie() {
         if (!BaseSteps.getWebDriver().findElements(By.xpath("//div[@class='cookie-warning cookie-warning_show']")).isEmpty()) {
-            BaseSteps.actions.moveToElement(cookieClose, 1 , 1);
+            BaseSteps.actions.moveToElement(cookieClose, 10 , 10);
             cookieClose.click();
         }
     }
