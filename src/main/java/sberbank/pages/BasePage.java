@@ -1,6 +1,7 @@
 package sberbank.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import sberbank.steps.BaseSteps;
@@ -25,5 +26,11 @@ public abstract class BasePage {
 
     public WebElement waitClickableOf(WebElement webElement) {
         return BaseSteps.webDriverWait.until(ExpectedConditions.elementToBeClickable(webElement));
+    }
+
+    public void scrollIntoView(WebElement webElement) {
+        JavascriptExecutor javascriptExecutor = (JavascriptExecutor) BaseSteps.getWebDriver();
+        javascriptExecutor.executeScript("arguments[0].scrollIntoView(false)", webElement);
+        waitVisibilityOf(webElement);
     }
 }

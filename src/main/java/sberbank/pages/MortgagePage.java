@@ -117,10 +117,4 @@ public class MortgagePage extends BasePage {
     private String getText(WebElement webElement) {
         return webElement.getText().replaceAll("[^0-9,]", "");
     }
-
-    private void scrollIntoView(WebElement webElement) {
-        JavascriptExecutor javascriptExecutor = (JavascriptExecutor) BaseSteps.getWebDriver();
-        javascriptExecutor.executeScript("arguments[0].scrollIntoView(false)", webElement);
-        waitVisibilityOf(webElement);
-    }
 }
