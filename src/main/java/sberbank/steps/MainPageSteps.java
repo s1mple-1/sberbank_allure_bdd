@@ -5,14 +5,14 @@ import sberbank.pages.MainPage;
 
 public class MainPageSteps {
 
-    @Step("Выбор пункта 'Доступно онлайн'")
-    public MainPageSteps selectOnlineAvailable() {
+    @Step("Выбор пункта 'Ипотека'")
+    public MainPageSteps selectMortgage() {
         MainPage mainPage = new MainPage();
-        mainPage.clickElement(mainPage.availableOnline);
+        mainPage.moveElement(mainPage.mortgage);
         return this;
     }
 
-    @Step("Выбор пункта 'Ипотека на готовые квартиры'")
+    @Step("Выбор пункта 'Ипотека на готовое жилье'")
     public void selectMortgageOnReadyHouses() {
         MainPage mainPage = new MainPage();
         mainPage.clickElement(mainPage.mortgageReadyElement);

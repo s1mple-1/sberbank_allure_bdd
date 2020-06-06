@@ -8,10 +8,10 @@ import sberbank.steps.BaseSteps;
 public class MainPage extends BasePage {
 
 
-    @FindBy(xpath = "//button[text()='Доступно онлайн']")
-    public WebElement availableOnline;
+    @FindBy(xpath = "//span[text()='Ипотека']")
+    public WebElement mortgage;
 
-    @FindBy(xpath = "//div[text()='Ипотека на готовые квартиры']")
+    @FindBy(xpath = "//li[@class='lg-menu__sub-item']//a[text()='Ипотека на готовое жильё']")
     public WebElement mortgageReadyElement;
 
     public MainPage() {
@@ -19,6 +19,7 @@ public class MainPage extends BasePage {
     }
 
     public void moveElement(WebElement webElement) {
+        checkCookie();
         waitVisibilityOf(webElement);
         moveToElement(webElement);
     }

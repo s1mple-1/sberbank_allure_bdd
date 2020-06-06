@@ -1,24 +1,16 @@
 package sberbank.pages;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import sberbank.steps.BaseSteps;
-import sberbank.utils.AllureUtils;
 
 abstract class BasePage {
 
     void clickToElement(WebElement webElement) {
-        try {
             BaseSteps.webDriverWait.until(ExpectedConditions.elementToBeClickable(webElement)).click();
-        } catch (ElementClickInterceptedException e) {
-            AllureUtils.takeScreenshot();
-            checkCookie();
-            webElement.click();
-        }
     }
 
     WebElement findElement(String xpath) {
@@ -43,11 +35,10 @@ abstract class BasePage {
         waitVisibilityOf(webElement);
     }
 
-
     @FindBy(xpath = "//a[@class='cookie-warning__close']")
     private WebElement cookieClose;
 
-    private void checkCookie() {
+    void checkCookie() {
         if (!BaseSteps.getWebDriver().findElements(By.xpath("//div[@class='cookie-warning cookie-warning_show']")).isEmpty()) {
             cookieClose.click();
         }

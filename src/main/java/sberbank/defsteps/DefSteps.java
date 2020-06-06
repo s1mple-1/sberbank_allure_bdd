@@ -12,12 +12,12 @@ public class DefSteps {
     private MortgagePageSteps mortgagePageSteps = new MortgagePageSteps();
 
 
-    @When("Выбран пункт 'Доступно онлайн'")
+    @When("Выбран пункт 'Ипотека'")
     public void selectMortgage() {
-        mainPageSteps.selectOnlineAvailable();
+        mainPageSteps.selectMortgage();
     }
 
-    @When("Выбран пункт 'Ипотека на готовые квартиры'")
+    @When("Выбран пункт 'Ипотека на готовое жилье'")
     public void selectMortgageOnReadyHouses() {
         mainPageSteps.selectMortgageOnReadyHouses();
     }
