@@ -21,9 +21,9 @@ public class MainPage extends BasePage {
     }
 
     public void checkCookie() {
-        if (!BaseSteps.getWebDriver().findElements(By.xpath("//div[@class='cookie-warning cookie-warning_show']")).isEmpty()) {
+//        if (!BaseSteps.getWebDriver().findElements(By.xpath("//div[@class='cookie-warning cookie-warning_show']")).isEmpty()) {
             clickElement(cookieClose);
-        }
+//        }
     }
 
     public void moveElement(WebElement webElement) {
