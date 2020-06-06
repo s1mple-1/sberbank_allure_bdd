@@ -1,15 +1,22 @@
 package sberbank.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import sberbank.steps.BaseSteps;
 
 public abstract class BasePage {
 
     public void clickToElement(WebElement webElement) {
-        BaseSteps.webDriverWait.until(ExpectedConditions.elementToBeClickable(webElement)).click();
+        try {
+            BaseSteps.webDriverWait.until(ExpectedConditions.elementToBeClickable(webElement)).click();
+        } catch (ElementClickInterceptedException e) {
+            checkCookie();
+            clickToElement(webElement);
+        }
     }
 
     public WebElement findElement(String xpath) {
@@ -32,5 +39,15 @@ public abstract class BasePage {
         JavascriptExecutor javascriptExecutor = (JavascriptExecutor) BaseSteps.getWebDriver();
         javascriptExecutor.executeScript("arguments[0].scrollIntoView(false)", webElement);
         waitVisibilityOf(webElement);
+    }
+
+
+    @FindBy(xpath = "//a[@class='cookie-warning__close']")
+    private WebElement cookieClose;
+
+    private void checkCookie() {
+        if (!BaseSteps.getWebDriver().findElements(By.xpath("//div[@class='cookie-warning cookie-warning_show']")).isEmpty()) {
+            cookieClose.click();
+        }
     }
 }
