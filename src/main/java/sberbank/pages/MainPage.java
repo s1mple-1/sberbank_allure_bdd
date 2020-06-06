@@ -18,8 +18,6 @@ public class MainPage extends BasePage {
         PageFactory.initElements(BaseSteps.getWebDriver(), this);
     }
 
-
-
     public void moveElement(WebElement webElement) {
         waitVisibilityOf(webElement);
         moveToElement(webElement);

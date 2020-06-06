@@ -11,14 +11,10 @@ public class DefSteps {
     private MainPageSteps mainPageSteps = new MainPageSteps();
     private MortgagePageSteps mortgagePageSteps = new MortgagePageSteps();
 
-//    @When("Закрыто всплывающее окно Cookie")
-//    public void closeCookie() {
-//        mainPageSteps.closeCookie();
-//    }
 
-    @When("Выбран пункт 'Ипотека'")
+    @When("Выбран пункт 'Доступно онлайн'")
     public void selectMortgage() {
-        mainPageSteps.selectMortgageMenuBar();
+        mainPageSteps.selectOnlineAvailable();
     }
 
     @When("Выбран пункт 'Ипотека на готовые квартиры'")
@@ -27,7 +23,7 @@ public class DefSteps {
     }
 
     @When("Подключение Frame и ожидание калькулятора")
-    public void connectFrame(){
+    public void connectFrame() {
         mortgagePageSteps.connectFrameAndWaitLoading();
     }
 
@@ -39,7 +35,7 @@ public class DefSteps {
     }
 
     @Then("Выбираются опции")
-    public void choose(DataTable fields){
+    public void choose(DataTable fields) {
         mortgagePageSteps.chooseSwitches(fields.asList(Integer.class));
     }
 

@@ -9,9 +9,9 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import sberbank.steps.BaseSteps;
 import sberbank.utils.AllureUtils;
 
-public abstract class BasePage {
+abstract class BasePage {
 
-    public void clickToElement(WebElement webElement) {
+    void clickToElement(WebElement webElement) {
         try {
             BaseSteps.webDriverWait.until(ExpectedConditions.elementToBeClickable(webElement)).click();
         } catch (ElementClickInterceptedException e) {
@@ -21,23 +21,23 @@ public abstract class BasePage {
         }
     }
 
-    public WebElement findElement(String xpath) {
+    WebElement findElement(String xpath) {
         return BaseSteps.getWebDriver().findElement(By.xpath(xpath));
     }
 
-    public void moveToElement(WebElement webElement) {
+    void moveToElement(WebElement webElement) {
         BaseSteps.actions.moveToElement(webElement).perform();
     }
 
-    public WebElement waitVisibilityOf(WebElement webElement) {
+    WebElement waitVisibilityOf(WebElement webElement) {
         return BaseSteps.webDriverWait.until(ExpectedConditions.visibilityOf(webElement));
     }
 
-    public WebElement waitClickableOf(WebElement webElement) {
+    WebElement waitClickableOf(WebElement webElement) {
         return BaseSteps.webDriverWait.until(ExpectedConditions.elementToBeClickable(webElement));
     }
 
-    public void scrollIntoView(WebElement webElement) {
+    void scrollIntoView(WebElement webElement) {
         JavascriptExecutor javascriptExecutor = (JavascriptExecutor) BaseSteps.getWebDriver();
         javascriptExecutor.executeScript("arguments[0].scrollIntoView(false)", webElement);
         waitVisibilityOf(webElement);
