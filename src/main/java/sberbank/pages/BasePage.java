@@ -40,6 +40,7 @@ abstract class BasePage {
 
     void checkCookie() {
         if (!BaseSteps.getWebDriver().findElements(By.xpath("//div[@class='cookie-warning cookie-warning_show']")).isEmpty()) {
+            BaseSteps.actions.moveToElement(cookieClose, 1 , 1);
             cookieClose.click();
         }
     }
