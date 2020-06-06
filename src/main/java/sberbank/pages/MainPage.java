@@ -28,7 +28,6 @@ public class MainPage extends BasePage {
                 e.printStackTrace();
             }
             scrollIntoView(cookieClose);
-            moveElement(cookieClose);
             clickElement(cookieClose);
         }
     }
