@@ -17,12 +17,10 @@ class SberAllureTest extends BaseTest {
         String url = "https://www.sberbank.ru/person";
         BaseSteps.getSite(url);
 
-        mainPageSteps.selectMortgageMenuBar().selectMortgageOnReadyHouses();
+        mainPageSteps.selectMortgageMenuBar().closeCookie().selectMortgageOnReadyHouses();
 
-        mortgagePageSteps.connectFrameAndWaitLoading();
-        mainPageSteps.closeCookie();
-
-        mortgagePageSteps.fillFields(
+        mortgagePageSteps.connectFrameAndWaitLoading()
+                .fillFields(
                         new LinkedHashMap<>() {{
                             put("Стоимость недвижимости", "5180000");
                             put("Первоначальный взнос", "3058000");
