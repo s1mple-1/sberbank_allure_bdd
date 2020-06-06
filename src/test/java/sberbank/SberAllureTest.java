@@ -17,8 +17,8 @@ class SberAllureTest extends BaseTest {
         String url = "https://www.sberbank.ru/person";
         BaseSteps.getSite(url);
 
-        mainPageSteps.closeCookie().selectMortgageMenuBar().selectMortgageOnReadyHouses();
-
+        mainPageSteps.selectMortgageMenuBar().selectMortgageOnReadyHouses();
+        mainPageSteps.closeCookie();
         mortgagePageSteps.connectFrameAndWaitLoading()
                 .fillFields(
                         new LinkedHashMap<>() {{
