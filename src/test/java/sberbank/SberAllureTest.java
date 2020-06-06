@@ -19,8 +19,10 @@ class SberAllureTest extends BaseTest {
 
         mainPageSteps.selectMortgageMenuBar().selectMortgageOnReadyHouses();
 
-        mortgagePageSteps.connectFrameAndWaitLoading()
-                .fillFields(
+        mortgagePageSteps.connectFrameAndWaitLoading();
+        mainPageSteps.closeCookie();
+
+        mortgagePageSteps.fillFields(
                         new LinkedHashMap<>() {{
                             put("Стоимость недвижимости", "5180000");
                             put("Первоначальный взнос", "3058000");
