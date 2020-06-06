@@ -22,6 +22,7 @@ public class MainPage extends BasePage {
     }
 
     public void checkCookie() {
+        AllureUtils.takeScreenshot();
         if (!BaseSteps.getWebDriver().findElements(By.xpath("//div[@class='cookie-warning cookie-warning_show']")).isEmpty()) {
             AllureUtils.takeScreenshot();
             try {
