@@ -12,14 +12,14 @@ public class MainPageSteps {
         return this;
     }
 
-    @Step("Выбор пункта 'Ипотека'")
+    @Step("Выбор пункта 'Доступно онлайн'")
     public MainPageSteps selectMortgageMenuBar() {
         MainPage mainPage = new MainPage();
-        mainPage.moveToElement(mainPage.mortgageMenuBarElement);
+        mainPage.clickElement(mainPage.availableOnline);
         return this;
     }
 
-    @Step("Выбор пункта 'Ипотека на готовое жилье'")
+    @Step("Выбор пункта 'Ипотека на готовые квартиры'")
     public void selectMortgageOnReadyHouses() {
         MainPage mainPage = new MainPage();
         mainPage.moveElement(mainPage.mortgageReadyElement);

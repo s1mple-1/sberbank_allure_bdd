@@ -10,10 +10,10 @@ public class MainPage extends BasePage {
     @FindBy(xpath = "//a[@class='cookie-warning__close']")
     private WebElement cookieClose;
 
-    @FindBy(xpath = "//button[@aria-label='Меню Ипотека']")
-    public WebElement mortgageMenuBarElement;
+    @FindBy(xpath = "//button[text()='Доступно онлайн']")
+    public WebElement availableOnline;
 
-    @FindBy(xpath = "//li[@class='lg-menu__sub-item']//a[text()='Ипотека на готовое жильё']")
+    @FindBy(xpath = "//div[text()='Ипотека на готовые квартиры']")
     public WebElement mortgageReadyElement;
 
     public MainPage() {

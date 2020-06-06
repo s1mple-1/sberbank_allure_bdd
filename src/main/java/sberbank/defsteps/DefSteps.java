@@ -16,12 +16,12 @@ public class DefSteps {
         mainPageSteps.closeCookie();
     }
 
-    @When("Выбран пункт меню 'Ипотека'")
+    @When("Выбран пункт 'Ипотека'")
     public void selectMortgage() {
         mainPageSteps.selectMortgageMenuBar();
     }
 
-    @When("Выбран пунк 'Ипотека на готовое жилье'")
+    @When("Выбран пункт 'Ипотека на готовые квартиры'")
     public void selectMortgageOnReadyHouses() {
         mainPageSteps.selectMortgageOnReadyHouses();
     }

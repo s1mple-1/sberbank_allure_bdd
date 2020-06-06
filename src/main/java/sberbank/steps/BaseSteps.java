@@ -1,13 +1,16 @@
 package sberbank.steps;
 
 import io.qameta.allure.Step;
+import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.opera.OperaDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import sberbank.TestProperties;
 
+import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 public class BaseSteps {
@@ -16,8 +19,9 @@ public class BaseSteps {
     public static Actions actions;
 
     public static void init() {
-        String browser = System.getProperty("browser", "opera");
+        Properties properties = TestProperties.getInstance().getProperties();
 
+        String browser = properties.getProperty("browser", "opera");
         switch (browser) {
             case "chrome":
                 System.setProperty("webdriver.chrome.driver", "webdrivers/chromedriver.exe");
