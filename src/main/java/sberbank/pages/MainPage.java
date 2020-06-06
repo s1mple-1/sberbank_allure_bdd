@@ -5,7 +5,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import sberbank.steps.BaseSteps;
-import sberbank.utils.AllureUtils;
 
 public class MainPage extends BasePage {
     @FindBy(xpath = "//a[@class='cookie-warning__close']")
