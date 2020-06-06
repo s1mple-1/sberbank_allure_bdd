@@ -2,11 +2,13 @@ package sberbank.steps;
 
 import io.qameta.allure.Step;
 import sberbank.pages.MainPage;
+import sberbank.utils.AllureUtils;
 
 public class MainPageSteps {
 
     @Step("Закрыть всплывающиее окно 'Cookie'")
     public MainPageSteps closeCookie() {
+        AllureUtils.takeScreenshot();
         MainPage mainPage = new MainPage();
         mainPage.checkCookie();
         return this;
