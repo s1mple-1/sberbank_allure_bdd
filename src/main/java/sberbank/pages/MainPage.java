@@ -22,6 +22,7 @@ public class MainPage extends BasePage {
 
     public void checkCookie() {
         if (!BaseSteps.getWebDriver().findElements(By.xpath("//div[@class='cookie-warning cookie-warning_show']")).isEmpty()) {
+            moveElement(cookieClose);
             clickElement(cookieClose);
         }
     }
