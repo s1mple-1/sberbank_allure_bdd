@@ -22,7 +22,7 @@ public class MainPageSteps {
     @Step("Выбор пункта 'Ипотека на готовые квартиры'")
     public void selectMortgageOnReadyHouses() {
         MainPage mainPage = new MainPage();
-        mainPage.moveElement(mainPage.mortgageReadyElement);
+//        mainPage.moveElement(mainPage.mortgageReadyElement);
         mainPage.clickElement(mainPage.mortgageReadyElement);
     }
 }
