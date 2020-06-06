@@ -21,11 +21,6 @@ public class MainPage extends BasePage {
     }
 
     public void checkCookie() {
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
         if (!BaseSteps.getWebDriver().findElements(By.xpath("//div[@class='cookie-warning cookie-warning_show']")).isEmpty()) {
             clickElement(cookieClose);
         }
