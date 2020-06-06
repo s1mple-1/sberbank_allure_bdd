@@ -30,7 +30,7 @@ public abstract class BasePage {
 
     public void check() {
         Alert alert = BaseSteps.getWebDriver().switchTo().alert();
-        alert.accept();
+        alert.dismiss();
     }
 
 }

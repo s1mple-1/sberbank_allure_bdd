@@ -9,6 +9,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.opera.OperaDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import sberbank.TestProperties;
+import sberbank.utils.AllureUtils;
 
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
@@ -45,6 +46,7 @@ public class BaseSteps {
     @Step("Заходим на сайт {url}")
     public static void getSite(String url) {
         webDriver.get(url);
+        AllureUtils.takeScreenshot();
     }
 
     public static void quit() {
