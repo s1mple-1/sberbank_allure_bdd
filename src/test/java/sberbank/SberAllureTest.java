@@ -4,7 +4,6 @@ import org.junit.jupiter.api.Test;
 import sberbank.steps.BaseSteps;
 import sberbank.steps.MainPageSteps;
 import sberbank.steps.MortgagePageSteps;
-import sberbank.utils.AllureUtils;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
@@ -17,7 +16,7 @@ class SberAllureTest extends BaseTest {
     void exTest() {
         String url = "https://www.sberbank.ru/person";
         BaseSteps.getSite(url);
-        AllureUtils.takeScreenshot();
+
         mainPageSteps.selectMortgageMenuBar().closeCookie().selectMortgageOnReadyHouses();
 
         mortgagePageSteps.connectFrameAndWaitLoading()
