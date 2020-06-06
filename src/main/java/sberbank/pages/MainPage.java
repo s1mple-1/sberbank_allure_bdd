@@ -1,11 +1,11 @@
 package sberbank.pages;
 
-import io.cucumber.java.en.Then;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import sberbank.steps.BaseSteps;
+import sberbank.utils.AllureUtils;
 
 public class MainPage extends BasePage {
     @FindBy(xpath = "//a[@class='cookie-warning__close']")
@@ -28,6 +28,7 @@ public class MainPage extends BasePage {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
+            AllureUtils.takeScreenshot();
             clickElement(cookieClose);
         }
     }
