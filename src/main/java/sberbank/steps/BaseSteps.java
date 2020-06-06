@@ -46,7 +46,6 @@ public class BaseSteps {
     @Step("Заходим на сайт {url}")
     public static void getSite(String url) {
         webDriver.get(url);
-        AllureUtils.takeScreenshot();
     }
 
     public static void quit() {
