@@ -1,5 +1,6 @@
 package sberbank.pages;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -27,5 +28,9 @@ public abstract class BasePage {
         return BaseSteps.webDriverWait.until(ExpectedConditions.elementToBeClickable(webElement));
     }
 
+    public void check() {
+        Alert alert = BaseSteps.getWebDriver().switchTo().alert();
+        alert.accept();
+    }
 
 }

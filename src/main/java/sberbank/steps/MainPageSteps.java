@@ -8,7 +8,6 @@ public class MainPageSteps {
 
     @Step("Закрыть всплывающиее окно 'Cookie'")
     public MainPageSteps closeCookie() {
-        AllureUtils.takeScreenshot();
         MainPage mainPage = new MainPage();
         mainPage.checkCookie();
         return this;
