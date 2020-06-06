@@ -22,7 +22,13 @@ public class MainPage extends BasePage {
 
     public void checkCookie() {
         if (!BaseSteps.getWebDriver().findElements(By.xpath("//div[@class='cookie-warning cookie-warning_show']")).isEmpty()) {
-        clickElement(cookieClose);
+            try {
+                Thread.sleep(2000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            moveElement(cookieClose);
+            clickElement(cookieClose);
         }
     }
 
