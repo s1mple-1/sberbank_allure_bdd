@@ -40,8 +40,10 @@ public class MortgagePageSteps {
 
     @Step("Выбрана опция номер {number}")
     private void chooseHelper(int number) {
+        AllureUtils.takeScreenshot();
         MortgagePage mortgagePage = new MortgagePage();
         mortgagePage.chooseCheckBox(number);
+        AllureUtils.takeScreenshot();
     }
 
     @Step("Проверка полей калькулятора")
