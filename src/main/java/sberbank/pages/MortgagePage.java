@@ -86,7 +86,7 @@ public class MortgagePage extends BasePage {
         String switchControls = "(//span[@class='dcCalc_switch__control'])[%s]";
         WebElement switchElement = findElement(String.format(switchControls, String.valueOf(numberSwitch)));
 //        scrollIntoView(switchElement);
-        moveToElement(switchElement);
+//        moveToElement(switchElement);
         waitClickableOf(switchElement);
         clickToElement(switchElement);
         waitRefreshingValues();
