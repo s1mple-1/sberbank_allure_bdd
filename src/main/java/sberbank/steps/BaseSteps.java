@@ -23,15 +23,15 @@ public class BaseSteps {
         String browser = properties.getProperty("browser", "opera");
         switch (browser) {
             case "chrome":
-                System.setProperty("webdriver.chrome.driver", "webdrivers/chromedriver.exe");
+                System.setProperty("webdriver.chrome.driver", properties.getProperty("driver"));
                 webDriver = new ChromeDriver();
                 break;
             case "opera":
-                System.setProperty("webdriver.opera.driver", "webdrivers/operadriver.exe");
+                System.setProperty("webdriver.opera.driver", properties.getProperty("driver"));
                 webDriver = new OperaDriver();
                 break;
             case "firefox":
-                System.setProperty("webdriver.gecko.driver", "webdrivers/geckodriver.exe");
+                System.setProperty("webdriver.gecko.driver", properties.getProperty("driver"));
                 webDriver = new FirefoxDriver();
                 break;
         }
