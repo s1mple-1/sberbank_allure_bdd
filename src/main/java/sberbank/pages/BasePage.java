@@ -44,15 +44,4 @@ abstract class BasePage {
         javascriptExecutor.executeScript("arguments[0].scrollIntoView(false)", webElement);
         waitVisibilityOf(webElement);
     }
-
-    @FindBy(xpath = "//a[@class='cookie-warning__close']")
-    private WebElement cookieClose;
-
-    public void checkCookie() {
-        if (!BaseSteps.getWebDriver().findElements(By.xpath("//div[@class='cookie-warning cookie-warning_show']")).isEmpty()) {
-            waitClickableOf(cookieClose);
-            moveAndClick(cookieClose);
-
-        }
-    }
 }

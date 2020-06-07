@@ -5,6 +5,13 @@ import sberbank.pages.MainPage;
 
 public class MainPageSteps {
 
+    @Step("Закрытие Cookie")
+    public MainPageSteps closeCookie() {
+        MainPage mainPage = new MainPage();
+        mainPage.checkCookie();
+        return this;
+    }
+
     @Step("Выбор пункта 'Ипотека'")
     public MainPageSteps selectMortgage() {
         MainPage mainPage = new MainPage();
