@@ -86,6 +86,7 @@ public class MortgagePage extends BasePage {
         WebElement switchElement = findElement(String.format(switchControls, String.valueOf(numberSwitch)));
         scrollIntoView(switchElement);
         waitClickableOf(switchElement);
+        moveToElement(switchElement);
         clickToElement(switchElement);
         waitRefreshingValues();
         if (numberSwitch == 2) {
