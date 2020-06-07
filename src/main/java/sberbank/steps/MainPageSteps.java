@@ -7,11 +7,6 @@ public class MainPageSteps {
 
     @Step("Закрытие Cookie")
     public MainPageSteps closeCookie() {
-        try {
-            Thread.sleep(5000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
         MainPage mainPage = new MainPage();
         mainPage.checkCookie();
         return this;

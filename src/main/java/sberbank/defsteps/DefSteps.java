@@ -11,6 +11,10 @@ public class DefSteps {
     private MainPageSteps mainPageSteps = new MainPageSteps();
     private MortgagePageSteps mortgagePageSteps = new MortgagePageSteps();
 
+    @When("Закрыто cookie")
+    public void close() {
+        mainPageSteps.closeCookie();
+    }
 
     @When("Выбран пункт 'Ипотека'")
     public void selectMortgage() {
