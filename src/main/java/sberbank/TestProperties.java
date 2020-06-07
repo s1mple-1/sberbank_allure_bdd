@@ -13,7 +13,7 @@ public class TestProperties {
 
     private TestProperties() {
         try {
-            properties.load(new FileInputStream(new File("src/test/resources/installprop.properties")));
+            properties.load(new FileInputStream(new File("src/test/resources/"+System.getProperty("prop")+".properties")));
         } catch (IOException e) {
             e.printStackTrace();
         }

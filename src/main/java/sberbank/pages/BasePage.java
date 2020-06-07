@@ -4,7 +4,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import sberbank.steps.BaseSteps;
 
@@ -27,9 +26,6 @@ abstract class BasePage {
         BaseSteps.actions.moveToElement(webElement).perform();
     }
 
-    void moveAndClick(WebElement webElement) {
-        BaseSteps.actions.moveToElement(webElement).click().perform();
-    }
 
     WebElement waitVisibilityOf(WebElement webElement) {
         return BaseSteps.webDriverWait.until(ExpectedConditions.visibilityOf(webElement));

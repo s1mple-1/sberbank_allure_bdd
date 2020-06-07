@@ -37,6 +37,7 @@ public class MainPage extends BasePage {
 
     public void clickElement(WebElement webElement) {
         waitVisibilityOf(webElement);
+        waitClickableOf(webElement);
         clickToElement(webElement);
     }
 }
