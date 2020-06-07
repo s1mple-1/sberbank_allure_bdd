@@ -13,6 +13,7 @@ public class MortgagePageSteps {
     @Step("Подключение Frame и ожидание калькулятора")
     public MortgagePageSteps connectFrameAndWaitLoading() {
         MortgagePage mortgagePage = new MortgagePage();
+        mortgagePage.checkCookie();
         mortgagePage.switchToFrame();
         mortgagePage.waitCalcLoading();
         return this;

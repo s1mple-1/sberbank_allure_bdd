@@ -19,7 +19,6 @@ public class MainPage extends BasePage {
     }
 
     public void moveElement(WebElement webElement) {
-        checkCookie();
         waitVisibilityOf(webElement);
         moveToElement(webElement);
     }

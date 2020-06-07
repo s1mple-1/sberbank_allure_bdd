@@ -27,6 +27,10 @@ abstract class BasePage {
         BaseSteps.actions.moveToElement(webElement).perform();
     }
 
+    void moveAndClick(WebElement webElement) {
+        BaseSteps.actions.moveToElement(webElement).click().perform();
+    }
+
     WebElement waitVisibilityOf(WebElement webElement) {
         return BaseSteps.webDriverWait.until(ExpectedConditions.visibilityOf(webElement));
     }
@@ -44,10 +48,11 @@ abstract class BasePage {
     @FindBy(xpath = "//a[@class='cookie-warning__close']")
     private WebElement cookieClose;
 
-    void checkCookie() {
+    public void checkCookie() {
         if (!BaseSteps.getWebDriver().findElements(By.xpath("//div[@class='cookie-warning cookie-warning_show']")).isEmpty()) {
-            BaseSteps.actions.moveToElement(cookieClose, 10 , 10);
-            cookieClose.click();
+            waitClickableOf(cookieClose);
+            moveAndClick(cookieClose);
+
         }
     }
 }
